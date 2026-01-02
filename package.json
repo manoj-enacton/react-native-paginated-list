@@ -1,0 +1,19 @@
+{
+  "name": "react-native-paginated-list",
+  "version": "1.0.0",
+  "description": "Reusable paginated FlatList + pagination hook for React Native",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=17",
+    "react-native": ">=0.68"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  }
+}

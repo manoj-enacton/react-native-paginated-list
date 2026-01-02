@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "jsx": "react-native",
+    "module": "ESNext",
+    "target": "ES2019",
+    "strict": true
+  },
+  "include": ["src"]
+}
