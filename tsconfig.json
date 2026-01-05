@@ -3,10 +3,20 @@
     "outDir": "dist",
     "declaration": true,
     "emitDeclarationOnly": false,
+
     "jsx": "react-native",
     "module": "ESNext",
     "target": "ES2019",
-    "strict": true
+
+    "moduleResolution": "node",
+    "strict": true,
+
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+
+    "lib": ["ES2019"],
+    "types": ["react"]
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

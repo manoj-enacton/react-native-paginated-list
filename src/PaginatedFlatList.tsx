@@ -14,7 +14,7 @@ export interface PaginatedFlatListProps<T>
 }
 
 export function PaginatedFlatList<T>({
-  data = [],
+  data,
   pagination,
   isLoading,
   onLoadMore,
@@ -23,15 +23,17 @@ export function PaginatedFlatList<T>({
   enableAutoFetch = true,
   ...props
 }: PaginatedFlatListProps<T>) {
+  const safeData = data ?? [];
+
   const hasMore = useMemo(() => {
     if (pagination.totalPages !== undefined) {
       return pagination.page <= pagination.totalPages;
     }
     if (pagination.totalCount !== undefined) {
-      return data.length < pagination.totalCount;
+      return safeData.length < pagination.totalCount;
     }
     return true;
-  }, [pagination, data.length]);
+  }, [pagination, safeData.length]);
 
   const handleEndReached = useCallback(() => {
     if (!enableAutoFetch || isLoading || !hasMore) return;
@@ -57,7 +59,7 @@ export function PaginatedFlatList<T>({
   return (
     <FlatList
       {...props}
-      data={data}
+      data={safeData}
       onEndReached={handleEndReached}
       onEndReachedThreshold={0.2}
       ListFooterComponent={renderFooter}

@@ -1,6 +1,7 @@
 {
-  "name": "react-native-paginated-list",
+  "name": "react-native-enacton-paginated-list",
   "version": "1.0.0",
+  "private": false,
   "description": "Reusable paginated FlatList + pagination hook for React Native",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,6 +9,17 @@
     "dist"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manoj-enacton/react-native-paginated-list"
+  },
+  "keywords": [
+    "react-native",
+    "flatlist",
+    "pagination",
+    "paginated-list",
+    "infinite-scroll"
+  ],
   "peerDependencies": {
     "react": ">=17",
     "react-native": ">=0.68"
@@ -15,5 +27,10 @@
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "react-native": "^0.83.1",
+    "typescript": "^5.9.3"
   }
 }
